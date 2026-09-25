@@ -1,0 +1,696 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Selim Medical Press</title>
+<meta name="description" content="Books, courses and free companion tools in drug safety, medical device safety, wound healing and orthobiologics by Dr. Hafez Selim, MD, PhD.">
+<link rel="canonical" href="https://abdu94-hash.github.io/selim-medical-press/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Selim Medical Press">
+<meta property="og:description" content="Books, courses and free companion tools in drug safety, medical device safety, wound healing and orthobiologics by Dr. Hafez Selim, MD, PhD.">
+<meta property="og:url" content="https://abdu94-hash.github.io/selim-medical-press/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231E3A5C'/%3E%3Ctext x='16' y='21' font-family='Georgia' font-size='14' fill='%23D6BA78' text-anchor='middle'%3ESM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@400;500;600&family=Libre+Caslon+Display&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+  :root {
+    color-scheme: light;
+    --paper: #F6F4EE;
+    --paper-2: #ECE8DE;
+    --card: #FBFAF6;
+    --ink: #1B2130;
+    --ink-2: #4B5264;
+    --ink-3: #6E7482;
+    --rule: #D5D0C3;
+    --accent: #1E3A5C;
+    --accent-ink: #FFFFFF;
+    --gold: #A8843A;
+    --s-pv: #1D5C5E;
+    --s-device: #34406B;
+    --s-wound: #2E5B3F;
+    --s-ortho: #6E2C30;
+    --display: "Libre Caslon Display", "Libre Caslon Text", Georgia, "Times New Roman", serif;
+    --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+    --label: "IBM Plex Sans Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+    --wrap: 1180px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding-inline: 24px; }
+  @media (max-width: 520px) { .wrap { padding-inline: 16px; } body { font-size: 16px; } }
+
+  .label {
+    font-family: var(--label);
+    font-size: 12.5px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  h1, h2, h3 { font-family: var(--display); font-weight: 400; text-wrap: balance; margin: 0; letter-spacing: 0.005em; }
+  h2 { font-size: clamp(30px, 4vw, 42px); line-height: 1.1; }
+  h3 { font-size: 22px; line-height: 1.2; }
+  p { margin: 0; }
+
+  /* Header */
+  .masthead { border-bottom: 1px solid var(--rule); background: var(--paper); position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; }
+  .masthead .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; flex-wrap: wrap; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
+  .brand-mark { width: 34px; height: 34px; border: 1.5px solid var(--ink); display: grid; place-items: center; font-family: var(--display); font-size: 17px; letter-spacing: 0.02em; }
+  .brand-name { font-family: var(--display); font-size: 21px; line-height: 1; }
+  .nav { display: flex; gap: 22px; flex-wrap: wrap; }
+  .nav a { font-family: var(--label); font-size: 14px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); text-decoration: none; }
+  .nav a:hover { color: var(--accent); }
+  @media (max-width: 640px) { .nav { gap: 14px; } .nav a { font-size: 12.5px; } }
+
+  /* Hero */
+  .hero .wrap { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; padding-block: 64px 56px; }
+  .hero h1 { font-size: clamp(38px, 5.6vw, 64px); line-height: 1.04; margin-top: 14px; }
+  .hero-lede { font-size: 19px; color: var(--ink-2); max-width: 36em; margin-top: 22px; }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--label); font-weight: 600; font-size: 14.5px; letter-spacing: 0.05em; text-transform: uppercase; padding: 12px 20px; text-decoration: none; border: 1.5px solid var(--accent); cursor: pointer; background: transparent; color: var(--accent); }
+  .btn.solid { background: var(--accent); color: var(--accent-ink); }
+  .btn:hover { background: var(--accent); color: var(--accent-ink); }
+  .btn.solid:hover { background: #142a44; border-color: #142a44; }
+  .tally { display: flex; gap: 28px; flex-wrap: wrap; margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--rule); }
+  .tally div { display: flex; flex-direction: column; }
+  .tally b { font-family: var(--display); font-weight: 400; font-size: 34px; line-height: 1; font-variant-numeric: lining-nums tabular-nums; }
+  .tally span { font-family: var(--label); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); margin-top: 6px; }
+
+  .hero { overflow-x: clip; }
+  .fan { position: relative; height: 430px; }
+  .fan .cover { position: absolute; width: 50%; top: 8%; box-shadow: 0 18px 40px -18px rgba(27, 33, 48, 0.45); transition: transform 0.5s ease; }
+  .fan .cover:nth-child(1) { left: 0%; transform: rotate(-8deg); }
+  .fan .cover:nth-child(2) { left: 16%; top: 5%; transform: rotate(-3deg); }
+  .fan .cover:nth-child(3) { left: 32%; top: 6%; transform: rotate(2deg); }
+  .fan .cover:nth-child(4) { left: 48%; top: 10%; transform: rotate(7deg); }
+  .fan:hover .cover:nth-child(1) { transform: rotate(-10deg) translateX(-4%); }
+  .fan:hover .cover:nth-child(4) { transform: rotate(9deg) translateX(4%); }
+  @media (max-width: 900px) {
+    .hero .wrap { grid-template-columns: 1fr; padding-block: 40px 40px; gap: 20px; }
+    .fan { height: 300px; max-width: 440px; width: 100%; margin: 0 auto; }
+    .fan .cover { width: 46%; top: 6%; }
+    .fan .cover:nth-child(4) { left: 50%; }
+  }
+
+  /* Typographic cover */
+  .cover { aspect-ratio: 2 / 3; max-width: 100%; background: var(--sc, var(--accent)); color: #F4EFE3; display: flex; flex-direction: column; padding: 9% 9% 8%; position: relative; overflow: hidden; container-type: inline-size; }
+  .cover::before { content: ""; position: absolute; inset: 4.5%; border: 1px solid rgba(214, 186, 120, 0.55); pointer-events: none; }
+  .cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .cv-imprint { font-family: var(--label); font-size: max(7px, 5.6cqi); letter-spacing: 0.2em; text-transform: uppercase; color: #D6BA78; text-align: center; }
+  .cv-title { font-family: var(--display); font-size: max(11px, 11.5cqi); line-height: 1.08; text-align: center; margin-top: auto; text-wrap: balance; }
+  .cv-title.long { font-size: max(10px, 9.6cqi); }
+  .cv-rule { width: 34%; height: 1px; background: #D6BA78; margin: 9% auto; }
+  .cv-sub { font-family: var(--serif); font-style: italic; font-size: max(7px, 5.4cqi); line-height: 1.35; text-align: center; opacity: 0.85; text-wrap: balance; }
+  .cv-author { font-family: var(--label); font-size: max(7px, 5.8cqi); letter-spacing: 0.14em; text-transform: uppercase; text-align: center; margin-top: auto; }
+
+  /* Sections */
+  section { scroll-margin-top: 80px; }
+  .band { background: var(--paper-2); border-block: 1px solid var(--rule); }
+  .sec { padding-block: 72px; }
+  @media (max-width: 640px) { .sec { padding-block: 52px; } }
+  .sec-head { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 20px; margin-bottom: 32px; }
+  .sec-head p { color: var(--ink-2); max-width: 40em; margin-top: 12px; }
+  @media (max-width: 760px) { .sec-head { grid-template-columns: 1fr; } }
+
+  /* Catalog filter */
+  .filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
+  .chip { font-family: var(--label); font-size: 14px; font-weight: 500; letter-spacing: 0.04em; padding: 8px 14px; border: 1px solid var(--rule); background: var(--card); color: var(--ink-2); cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+  .chip .dot { width: 9px; height: 9px; background: var(--sc, var(--ink-3)); }
+  .chip[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .chip .n { font-variant-numeric: tabular-nums; opacity: 0.6; }
+
+  .series-block + .series-block { margin-top: 56px; }
+  .series-title { display: flex; align-items: baseline; gap: 14px; padding-bottom: 12px; border-bottom: 2px solid var(--sc); margin-bottom: 26px; flex-wrap: wrap; }
+  .series-title h3 { font-size: 27px; }
+  .series-title .label { color: var(--sc); }
+  .series-title p { flex-basis: 100%; color: var(--ink-2); font-size: 16px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 40px 28px; }
+  @media (max-width: 560px) {
+    .grid { grid-template-columns: 1fr; gap: 32px; }
+    .grid .book { display: grid; grid-template-columns: 112px 1fr; column-gap: 16px; row-gap: 8px; align-content: start; }
+    .grid .book .cover { grid-row: 1 / span 7; align-self: start; }
+    .grid .book-actions { margin-top: 4px; }
+  }
+  .book { display: flex; flex-direction: column; gap: 14px; }
+  .book .cover { width: 100%; box-shadow: 0 10px 24px -14px rgba(27, 33, 48, 0.5); }
+  .book-meta { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .pill { font-family: var(--label); font-size: 11.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; border: 1px solid currentColor; }
+  .pill.live { color: #2E5B3F; }
+  .pill.soon { color: #8A6A1F; }
+  .book h4 { font-family: var(--serif); font-weight: 600; font-size: 18.5px; line-height: 1.3; margin: 0; text-wrap: balance; }
+  .book .sub { font-style: italic; color: var(--ink-2); font-size: 15.5px; line-height: 1.4; }
+  .book .blurb { font-size: 15.5px; color: var(--ink-2); line-height: 1.55; }
+  .book .extra { font-family: var(--label); font-size: 13px; letter-spacing: 0.03em; color: var(--ink-3); }
+  .book-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto; padding-top: 4px; }
+  .book-actions .btn { padding: 9px 14px; font-size: 13px; }
+  .textlink { font-family: var(--label); font-size: 13.5px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; align-self: center; }
+
+  /* Courses */
+  .courses { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0; border-top: 1px solid var(--ink); }
+  .course { display: grid; grid-template-columns: 1fr auto; gap: 6px 20px; padding: 22px 4px; border-bottom: 1px solid var(--rule); align-items: baseline; }
+  .courses .course:nth-child(odd) { padding-right: 28px; }
+  .course h3 { font-size: 23px; }
+  .course .price { font-family: var(--display); font-size: 24px; font-variant-numeric: lining-nums tabular-nums; white-space: nowrap; }
+  .course p { grid-column: 1 / -1; color: var(--ink-2); font-size: 15.5px; }
+  .course a { grid-column: 1 / -1; font-family: var(--label); font-size: 13.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 4px; }
+  @media (min-width: 700px) { .courses .course:nth-child(even) { padding-left: 28px; border-left: 1px solid var(--rule); } }
+  .fineprint { font-family: var(--label); font-size: 13px; color: var(--ink-3); margin-top: 16px; letter-spacing: 0.02em; }
+
+  /* Tools table */
+  .tools-wrap { overflow-x: auto; position: relative; }
+  table.tools { width: 100%; border-collapse: collapse; min-width: 560px; }
+  .tools th { text-align: left; font-family: var(--label); font-size: 12.5px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); padding: 10px 12px 10px 0; border-bottom: 1px solid var(--ink); }
+  .tools td { padding: 16px 12px 16px 0; border-bottom: 1px solid var(--rule); vertical-align: top; font-size: 16px; }
+  .tools td:first-child { font-weight: 600; }
+  .tools td .for { display: block; font-weight: 400; font-style: italic; color: var(--ink-3); font-size: 14.5px; }
+  .tools .sw { display: inline-block; width: 9px; height: 9px; background: var(--sc); margin-right: 8px; }
+  @media (max-width: 600px) {
+    table.tools { min-width: 0; }
+    .tools thead { display: none; }
+    .tools tr { display: block; padding-block: 16px; border-bottom: 1px solid var(--rule); }
+    .tools td { display: block; padding: 0; border: 0; }
+    .tools td + td { margin-top: 6px; }
+  }
+  .tools a { font-family: var(--label); font-weight: 600; font-size: 13.5px; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+
+  /* Consulting */
+  .consult { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .consult article { background: var(--card); border: 1px solid var(--rule); padding: 30px; display: flex; flex-direction: column; gap: 14px; }
+  .consult p { color: var(--ink-2); }
+  .consult ul { margin: 0; padding-left: 20px; color: var(--ink-2); font-size: 16px; }
+  .consult .btn { align-self: flex-start; margin-top: auto; }
+  @media (max-width: 760px) { .consult { grid-template-columns: 1fr; } .consult article { padding: 22px; } }
+
+  /* Author */
+  .author { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 48px; align-items: start; }
+  .author dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 10px 20px; font-size: 16px; }
+  .author dt { font-family: var(--label); font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); padding-top: 3px; }
+  .author dd { margin: 0; }
+  .author .bio p + p { margin-top: 14px; }
+  @media (max-width: 800px) { .author { grid-template-columns: 1fr; gap: 28px; } }
+
+  /* Signup */
+  .signup { background: var(--accent); color: #EEF1F5; }
+  .signup .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; padding-block: 60px; }
+  .signup h2 { color: #fff; }
+  .signup p { color: #C9D3E0; margin-top: 12px; }
+  .signup form { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .signup label { display: flex; flex-direction: column; gap: 6px; font-family: var(--label); font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #C9D3E0; }
+  .signup label.full { grid-column: 1 / -1; }
+  .signup input { font: inherit; font-family: var(--serif); font-size: 16px; text-transform: none; letter-spacing: 0; padding: 12px 14px; border: 1px solid #5B7291; background: #F6F4EE; color: var(--ink); width: 100%; }
+  .signup button { grid-column: 1 / -1; background: #D6BA78; color: var(--ink); border: 0; font-family: var(--label); font-weight: 600; font-size: 14.5px; letter-spacing: 0.08em; text-transform: uppercase; padding: 14px; cursor: pointer; }
+  .signup button:hover { background: #E3CB90; }
+  .signup .status { grid-column: 1 / -1; font-size: 15px; color: #fff; min-height: 1.4em; }
+  @media (max-width: 800px) { .signup .wrap { grid-template-columns: 1fr; gap: 24px; } .signup form { grid-template-columns: 1fr; } }
+
+  footer { padding-block: 36px 48px; }
+  footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-family: var(--label); font-size: 13.5px; color: var(--ink-3); letter-spacing: 0.03em; }
+  footer a { color: var(--ink-2); }
+  footer nav { display: flex; gap: 18px; flex-wrap: wrap; }
+</style>
+
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Selim Medical Press, home">
+      <span class="brand-mark" aria-hidden="true">SM</span>
+      <span class="brand-name">Selim Medical Press</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#books">Books</a>
+      <a href="#courses">Courses</a>
+      <a href="#tools">Free tools</a>
+      <a href="#consulting">Consulting</a>
+      <a href="#updates">Updates</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <div class="label">Books · Courses · Companion tools</div>
+        <h1>Practical references for drug safety, device safety and clinical care</h1>
+        <p class="hero-lede">Written by Dr. Hafez Selim, MD, PhD, a physician-scientist who has spent his career assessing the safety of medicines and medical devices. Each book is built around worked cases and comes with free interactive tools you can use at work the same day.</p>
+        <div class="hero-actions">
+          <a class="btn solid" href="#books">Browse the catalog</a>
+          <a class="btn" href="#courses">See courses</a>
+        </div>
+        <div class="tally" id="tally" aria-label="Catalog at a glance"></div>
+      </div>
+      <div class="fan" id="fan" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <section id="books" class="band">
+    <div class="wrap sec">
+      <div class="sec-head">
+        <div>
+          <div class="label">The catalog</div>
+          <h2>Books</h2>
+          <p>Available titles link straight to Amazon. Forthcoming titles are listed so you can plan ahead; join the list below to hear when each one is released.</p>
+        </div>
+      </div>
+      <div class="filters" id="filters" role="group" aria-label="Filter by subject"></div>
+      <div id="catalog"></div>
+    </div>
+  </section>
+
+  <section id="courses">
+    <div class="wrap sec">
+      <div class="sec-head">
+        <div>
+          <div class="label">Certificates and diplomas</div>
+          <h2>Courses</h2>
+          <p>Structured online training through the MedTech Talents Institute, built on the same material as the books. Each course pairs short video lessons with quizzes and practical examples.</p>
+        </div>
+      </div>
+      <div class="courses" id="course-list"></div>
+      <p class="fineprint">Prices are in US dollars and are set on the course platform, which shows the current price at checkout.</p>
+    </div>
+  </section>
+
+  <section id="tools" class="band">
+    <div class="wrap sec">
+      <div class="sec-head">
+        <div>
+          <div class="label">Free, no sign-in</div>
+          <h2>Companion tools</h2>
+          <p>Interactive workbenches, calculators and self-assessment quizzes that accompany the books. They run in your browser and store nothing.</p>
+        </div>
+      </div>
+      <div class="tools-wrap">
+        <table class="tools">
+          <thead><tr><th scope="col">Tool</th><th scope="col">What it does</th><th scope="col"><span class="visually-hidden">Link</span></th></tr></thead>
+          <tbody id="tool-rows"></tbody>
+        </table>
+      </div>
+      <p class="fineprint">Also free: 17 pharmacovigilance calculators (causality, seriousness, time to onset, signal prioritization and more) at <a href="https://medtechtalents.com/" target="_blank" rel="noopener">medtechtalents.com</a>.</p>
+    </div>
+  </section>
+
+  <section id="consulting">
+    <div class="wrap sec">
+      <div class="sec-head">
+        <div>
+          <div class="label">Work with the author</div>
+          <h2>Consulting</h2>
+          <p>When a book is not enough and you need someone to look at your specific situation.</p>
+        </div>
+      </div>
+      <div class="consult">
+        <article>
+          <div class="label">For professionals</div>
+          <h3>Career consulting</h3>
+          <p>For physicians, nurses, pharmacists and other clinicians moving into, or moving up in, drug safety, pharmacovigilance or medical device safety.</p>
+          <ul>
+            <li>Which industry roles fit your clinical background</li>
+            <li>Rewriting clinical experience for an industry CV</li>
+            <li>Choosing the right training and credentials</li>
+          </ul>
+          <a class="btn solid" href="https://medtechtalents.com/career-consulting/" target="_blank" rel="noopener">Book a free 15-minute call</a>
+        </article>
+        <article>
+          <div class="label">For companies</div>
+          <h3>Regulatory and safety support</h3>
+          <p>For small and mid-sized medical device and pharmaceutical companies that need senior safety and regulatory input without a full-time hire.</p>
+          <ul>
+            <li>EU MDR technical documentation and clinical evaluation</li>
+            <li>Vigilance, signal management and periodic safety reports</li>
+            <li>Benefit–risk assessment and ISO 14971 risk files</li>
+          </ul>
+          <a class="btn" href="https://mdss.solutions/" target="_blank" rel="noopener">Visit MDS Solutions</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="author" class="band">
+    <div class="wrap sec author">
+      <div>
+        <div class="label">The author</div>
+        <h2>Dr. Hafez Selim, MD, PhD</h2>
+      </div>
+      <div class="bio">
+        <p>Hafez Selim is a physician-scientist who works across drug safety and clinical development at a global pharmaceutical company. Before that he spent nearly a decade as Medical Advisor and Safety Physician in the spine division of a leading medical device company, where he led safety for rhBMP-2 clinical trials and secured the first 510(k) clearance for PEEK rods.</p>
+        <p>His regulatory work spans the FDA, EMA, MHRA and PMDA. He has published 49 journal articles and holds four patents in collagen and biomaterial technologies.</p>
+        <dl style="margin-top: 24px;">
+          <dt>MD</dt><dd>Ain Shams University School of Medicine</dd>
+          <dt>PhD</dt><dd>Anatomy and Cell Biology, Temple University School of Medicine</dd>
+          <dt>Postdoc</dt><dd>Harvard Medical School / Massachusetts General Hospital</dd>
+          <dt>Diploma</dt><dd>Applied Biostatistics, University of Minnesota</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="updates" class="signup">
+    <div class="wrap">
+      <div>
+        <div class="label" style="color:#D6BA78">New releases</div>
+        <h2>Hear when the next book is out</h2>
+        <p>One short email when a title is released or a new companion tool goes live. No other mail, and you can unsubscribe in one click.</p>
+      </div>
+      <form id="signup" novalidate>
+        <label for="su-name">First name
+          <input id="su-name" name="name" type="text" autocomplete="given-name">
+        </label>
+        <label for="su-email">Email
+          <input id="su-email" name="email" type="email" autocomplete="email" required>
+        </label>
+        <button type="submit">Notify me</button>
+        <p class="status" id="su-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> Selim Medical Press. The books and tools are educational references and do not replace professional judgement.</span>
+    <nav aria-label="Footer">
+      <a href="https://www.amazon.com/stores/author/B0H8FTNBYC" target="_blank" rel="noopener">Amazon author page</a>
+      <a href="https://medtechtalents.com/" target="_blank" rel="noopener">MedTech Talents Institute</a>
+    </nav>
+  </div>
+</footer>
+
+<style>.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}</style>
+
+<script>
+/* ============================================================
+   SITE SETTINGS: edit these values, nothing else needs to change
+   ============================================================ */
+const SETTINGS = {
+  amazonAuthorPage: "https://www.amazon.com/stores/author/B0H8FTNBYC",
+  // MailerLite: paste your embedded form's action URL here. It looks like
+  // https://assets.mailerlite.com/jsonp/1234567/forms/987654321/subscribe
+  mailerliteAction: ""
+};
+
+const SERIES = [
+  { id: "pv", name: "Pharmacovigilance & Drug Safety", color: "#1D5C5E",
+    note: "Benefit–risk, causality, time to onset and signal work for drug safety physicians and scientists." },
+  { id: "device", name: "Medical Device Safety", color: "#34406B",
+    note: "Vigilance, risk management, regulatory writing and careers in the device industry." },
+  { id: "wound", name: "Wound Healing & Diabetic Foot", color: "#2E5B3F",
+    note: "Mechanism-first references on diabetic foot ulcer biology and adjunctive therapy." },
+  { id: "ortho", name: "Orthobiologics", color: "#6E2C30",
+    note: "Bone grafts and graft substitutes, weighed on clinical evidence and device safety." }
+];
+
+/* status: "available" or "forthcoming".
+   amazon: the book's own Amazon link. Leave "" to fall back to the author page.
+   cover: optional path to a real cover image, e.g. "covers/benefit-risk.jpg" */
+const BOOKS = [
+  { series: "pv", status: "available",
+    title: "Practical Benefit–Risk Assessment in Pharmacovigilance",
+    sub: "From Safety Signals to Regulatory Decisions",
+    blurb: "Answers the question practitioners actually face: given these efficacy and safety data, how do I decide? One fictional medicine is reassessed with every method across 33 chapters.",
+    extra: "Foreword by Lisa Beth Ferstenberg, MD",
+    amazon: "https://www.amazon.com/dp/B0H1NLWTVL",
+    other: { label: "Other stores", url: "https://books2read.com/u/mvegWz" },
+    tool: "https://abdu94-hash.github.io/benefit-risk-workbench/" },
+  { series: "pv", status: "available",
+    title: "Applied Drug Safety and Adverse Drug Reactions",
+    sub: "A Comprehensive Reference",
+    blurb: "The Applied Drug Safety certificate program expanded into a full professional reference on adverse drug reactions and case assessment.",
+    amazon: "https://www.amazon.com/dp/B0GX316LVW" },
+  { series: "pv", status: "available",
+    title: "Analytical Methods in Pharmacovigilance",
+    sub: "Time-to-Onset and Causality Assessment",
+    blurb: "How to use time to onset in individual case causality and in aggregate signal evaluation, with worked examples and a companion set of clinical tools.",
+    amazon: "" },
+  { series: "pv", status: "forthcoming",
+    title: "Risk in Context",
+    sub: "Practical Risk Contextualization in Pharmacovigilance: From Safety Findings to Regulatory Conclusions",
+    blurb: "How to turn a safety finding into a proportionate regulatory conclusion by setting it against background rates, disease burden and the alternatives.",
+    tool: "https://abdu94-hash.github.io/risk-context-workbench/" },
+  { series: "pv", status: "forthcoming",
+    title: "Signal Management in Pharmacovigilance",
+    sub: "Companion volume to Signal Management in Medical Device Vigilance",
+    blurb: "The drug-safety counterpart to the device signal management book, from detection through validation to regulatory action." },
+
+  { series: "device", status: "available",
+    title: "The Long Life of a Safe Device",
+    sub: "Medical Device Safety from Design to Disposal",
+    blurb: "A lifecycle reference that follows a device's safety from design inputs and risk controls through post-market surveillance to end of life.",
+    amazon: "https://www.amazon.com/dp/B0H7PWCNS6" },
+  { series: "device", status: "available",
+    title: "Applied Medical Device Safety",
+    sub: "A Comprehensive Guide",
+    blurb: "The full life of a device, written for engineers, regulators, physicians and nurses at once.",
+    amazon: "https://www.amazon.com/dp/B0HCM3XBXB" },
+  { series: "device", status: "available",
+    title: "Becoming a Medical Device Safety Specialist",
+    sub: "A Complete Training Handbook",
+    blurb: "Core tasks, worked examples and templates for ICSRs, causality, periodic reports, ISO 14971 risk assessment and benefit–risk, with a career guide.",
+    amazon: "https://www.amazon.com/dp/B0H7QBDL68",
+    tool: "https://abdu94-hash.github.io/device-safety-workbook/" },
+  { series: "device", status: "available",
+    title: "The Practice & Self-Assessment Workbook",
+    sub: "Companion Workbook to Becoming a Medical Device Safety Specialist",
+    blurb: "Exercises with model answers and a 20-question quiz for every chapter and task, with explanations for each answer.",
+    amazon: "",
+    tool: "https://abdu94-hash.github.io/device-safety-workbook/" },
+  { series: "device", status: "available",
+    title: "Signal Management in Medical Device Vigilance",
+    sub: "From Complaints and Trends to Risk File Updates and Field Safety Action",
+    blurb: "28 chapters that follow a device signal from the first complaint to a closed record, with eight fictional devices whose numbers reconcile throughout.",
+    amazon: "" },
+  { series: "device", status: "available",
+    title: "Write It Right",
+    sub: "A Practical Guide to Medical Device Regulatory Writing",
+    blurb: "Clear, defensible regulatory documents, with exercises in all 16 chapters and a full answer key.",
+    amazon: "",
+    tool: "https://abdu94-hash.github.io/write-it-right/" },
+  { series: "device", status: "available",
+    title: "The Healthcare Professional's Guide to a Career in Medical Devices",
+    sub: "",
+    blurb: "Seven core industry roles, the certification paths into them, and a full case study of a clinician making the move.",
+    amazon: "" },
+
+  { series: "wound", status: "available",
+    title: "Blinded to Hypoxia",
+    sub: "Restoring Oxygen-Sensing Response in Diabetic Foot Ulcer",
+    blurb: "A focused monograph on HIF-1α stabilization as a therapeutic target in diabetic foot ulcers, written for translational clinicians.",
+    amazon: "https://www.amazon.com/dp/B0H92TT7VM" },
+  { series: "wound", status: "available",
+    title: "Molecular Targets for Diabetic Foot Ulcer Healing",
+    sub: "Mechanisms, Evidence, and Translational Therapeutics",
+    blurb: "Each molecular target is evaluated on the same four questions: why it is abnormal, what the evidence is, how to modulate it, and what blocks translation.",
+    amazon: "https://www.amazon.com/dp/B0H71ZS5SL",
+    tool: "https://abdu94-hash.github.io/dfu-target-atlas/" },
+  { series: "wound", status: "available",
+    title: "Hyperbaric Oxygen Therapy for Diabetic Foot Ulcers",
+    sub: "Safety, Effectiveness, Patient Selection, and Clinical Limitations",
+    blurb: "HBOT as an adjunct to, never a substitute for, comprehensive diabetic foot care, with clear lines between supported and unsupported use.",
+    amazon: "https://www.amazon.com/dp/B0HGC4YXTD",
+    tool: "https://abdu94-hash.github.io/hbot-dfu-tool/" },
+
+  { series: "ortho", status: "available",
+    title: "Safety and Effectiveness Profiles of Bone Grafts and Bone Graft Substitutes",
+    sub: "A Comprehensive Clinical, Scientific, and Regulatory Guide",
+    blurb: "Graft-by-graft profiles on a common template, linking bone biology and clinical effectiveness to device safety and post-market surveillance.",
+    extra: "Foreword by Mohamed Attawia, MD",
+    amazon: "",
+    tool: "https://abdu94-hash.github.io/bone-graft-tool/" }
+];
+
+const COURSES = [
+  { name: "Applied Drug Safety Certificate", price: "$99",
+    text: "100 lessons across 18 chapters. The course behind Applied Drug Safety and Adverse Drug Reactions.",
+    url: "https://courses.medtechtalents.com/products/courses/Applied-Drug-Safety-Certificate" },
+  { name: "Applied Pharmacovigilance Diploma", price: "$799",
+    text: "In-depth pharmacovigilance training for clinicians moving into drug safety roles.",
+    url: "https://courses.medtechtalents.com/courses/Applied%20Pharmacovigilance%20Diploma" },
+  { name: "Applied Medical Device Safety Certificate", price: "$499",
+    text: "Complaint handling, vigilance reporting and risk management across the device lifecycle.",
+    url: "https://courses.medtechtalents.com/courses/Applied%20Medical%20Device%20Safety%20Certificate" },
+  { name: "Medical Device Safety Specialist Diploma", price: "$799",
+    text: "The full training path that accompanies Becoming a Medical Device Safety Specialist.",
+    url: "https://courses.medtechtalents.com/courses/Medical%20Device%20Safety%20Specialist%20Diploma" },
+  { name: "Biostatistics Made Easy", price: "$299",
+    text: "The statistics you need to read trials and safety data, taught without heavy math.",
+    url: "https://courses.medtechtalents.com/courses/Biostatistics%20Made%20Easy" },
+  { name: "All-access membership", price: "$9.99/mo",
+    text: "Every MTTI prep course for the pharmaceutical industry, with a 7-day free trial.",
+    url: "https://courses.medtechtalents.com/bundles/prep-courses-for-pharma-industry" }
+];
+
+const TOOLS = [
+  { name: "Benefit–Risk Workbench", series: "pv", book: "Practical Benefit–Risk Assessment in Pharmacovigilance",
+    what: "Seven interactive modules, including an NNT/NNH calculator, that follow the book's methods chapter by chapter.",
+    url: "https://abdu94-hash.github.io/benefit-risk-workbench/" },
+  { name: "Risk Context Workbench", series: "pv", book: "Risk in Context",
+    what: "Interactive exercises for placing a safety finding in context before drawing a conclusion.",
+    url: "https://abdu94-hash.github.io/risk-context-workbench/" },
+  { name: "Device Safety Workbook", series: "device", book: "Becoming a Medical Device Safety Specialist",
+    what: "24 self-certification quizzes plus classifier, risk matrix, causality and ICSR validity tools.",
+    url: "https://abdu94-hash.github.io/device-safety-workbook/" },
+  { name: "Write It Right Toolkit", series: "device", book: "Write It Right",
+    what: "Scored rewrite drills, document builders and a vagueness and hedge-word analyzer.",
+    url: "https://abdu94-hash.github.io/write-it-right/" },
+  { name: "DFU Molecular Target Atlas", series: "wound", book: "Molecular Targets for Diabetic Foot Ulcer Healing",
+    what: "Filterable target dossiers, evidence tiers, an agent and trial explorer, and a treatment algorithm.",
+    url: "https://abdu94-hash.github.io/dfu-target-atlas/" },
+  { name: "HBOT DFU Clinical Companion", series: "wound", book: "Hyperbaric Oxygen Therapy for Diabetic Foot Ulcers",
+    what: "Patient selection, safety screening and printable reference material for HBOT programs.",
+    url: "https://abdu94-hash.github.io/hbot-dfu-tool/" },
+  { name: "Bone Graft Companion", series: "ortho", book: "Safety and Effectiveness Profiles of Bone Grafts",
+    what: "Graft selection and comparison tools built on the book's graft profiles.",
+    url: "https://abdu94-hash.github.io/bone-graft-tool/" }
+];
+
+/* ============================================================ */
+const $ = (s) => document.querySelector(s);
+const esc = (t) => String(t ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const seriesById = Object.fromEntries(SERIES.map((s) => [s.id, s]));
+
+function coverHTML(b) {
+  const s = seriesById[b.series];
+  const long = b.title.length > 42 ? " long" : "";
+  const img = b.cover ? `<img src="${esc(b.cover)}" alt="" loading="lazy" onerror="this.remove()">` : "";
+  return `<div class="cover" style="--sc:${s.color}">
+    <div class="cv-imprint">Selim Medical Press</div>
+    <div class="cv-title${long}">${esc(b.title)}</div>
+    <div class="cv-rule"></div>
+    <div class="cv-sub">${esc(b.sub)}</div>
+    <div class="cv-author">Hafez Selim, MD, PhD</div>
+    ${img}
+  </div>`;
+}
+
+function bookHTML(b) {
+  const live = b.status === "available";
+  const buyUrl = b.amazon || SETTINGS.amazonAuthorPage;
+  const buyLabel = b.amazon ? "Buy on Amazon" : "Find on Amazon";
+  const actions = live
+    ? `<a class="btn solid" href="${esc(buyUrl)}" target="_blank" rel="noopener">${buyLabel}</a>` +
+      (b.other ? `<a class="textlink" href="${esc(b.other.url)}" target="_blank" rel="noopener">${esc(b.other.label)}</a>` : "")
+    : `<a class="btn" href="#updates">Notify me</a>`;
+  const tool = b.tool ? `<a class="textlink" href="${esc(b.tool)}" target="_blank" rel="noopener">Free tool</a>` : "";
+  return `<article class="book">
+    ${coverHTML(b)}
+    <div class="book-meta"><span class="pill ${live ? "live" : "soon"}">${live ? "Available" : "Forthcoming"}</span></div>
+    <h4>${esc(b.title)}</h4>
+    ${b.sub ? `<div class="sub">${esc(b.sub)}</div>` : ""}
+    <p class="blurb">${esc(b.blurb)}</p>
+    ${b.extra ? `<div class="extra">${esc(b.extra)}</div>` : ""}
+    <div class="book-actions">${actions}${tool}</div>
+  </article>`;
+}
+
+function renderCatalog(filter) {
+  const blocks = SERIES.filter((s) => filter === "all" || s.id === filter).map((s) => {
+    const books = BOOKS.filter((b) => b.series === s.id)
+      .sort((a, b) => (a.status === b.status ? 0 : a.status === "available" ? -1 : 1));
+    return `<div class="series-block" style="--sc:${s.color}">
+      <div class="series-title"><h3>${esc(s.name)}</h3><span class="label">${books.length} ${books.length === 1 ? "title" : "titles"}</span><p>${esc(s.note)}</p></div>
+      <div class="grid">${books.map(bookHTML).join("")}</div>
+    </div>`;
+  });
+  $("#catalog").innerHTML = blocks.join("");
+  document.querySelectorAll(".chip").forEach((c) => c.setAttribute("aria-pressed", String(c.dataset.f === filter)));
+}
+
+function renderFilters() {
+  const chips = [{ id: "all", name: "All subjects", n: BOOKS.length }]
+    .concat(SERIES.map((s) => ({ id: s.id, name: s.name, color: s.color, n: BOOKS.filter((b) => b.series === s.id).length })));
+  $("#filters").innerHTML = chips.map((c) =>
+    `<button type="button" class="chip" data-f="${c.id}" aria-pressed="false" ${c.color ? `style="--sc:${c.color}"` : ""}>` +
+    `${c.color ? '<span class="dot"></span>' : ""}${esc(c.name)} <span class="n">${c.n}</span></button>`).join("");
+  $("#filters").addEventListener("click", (e) => {
+    const chip = e.target.closest(".chip");
+    if (!chip) return;
+    renderCatalog(chip.dataset.f);
+    try { localStorage.setItem("smp-filter", chip.dataset.f); } catch (err) {}
+  });
+}
+
+function renderHero() {
+  const picks = ["Practical Benefit–Risk Assessment in Pharmacovigilance", "Becoming a Medical Device Safety Specialist",
+    "Molecular Targets for Diabetic Foot Ulcer Healing", "Safety and Effectiveness Profiles of Bone Grafts and Bone Graft Substitutes"];
+  $("#fan").innerHTML = picks.map((t) => coverHTML(BOOKS.find((b) => b.title === t))).join("");
+  const avail = BOOKS.filter((b) => b.status === "available").length;
+  $("#tally").innerHTML = [
+    [avail, "Titles available"],
+    [BOOKS.length - avail, "Forthcoming"],
+    [COURSES.length, "Courses"],
+    [TOOLS.length, "Free tools"]
+  ].map(([n, l]) => `<div><b>${n}</b><span>${l}</span></div>`).join("");
+}
+
+function renderCourses() {
+  $("#course-list").innerHTML = COURSES.map((c) => `<div class="course">
+    <h3>${esc(c.name)}</h3><span class="price">${esc(c.price)}</span>
+    <p>${esc(c.text)}</p>
+    <a href="${esc(c.url)}" target="_blank" rel="noopener">View course</a>
+  </div>`).join("");
+}
+
+function renderTools() {
+  $("#tool-rows").innerHTML = TOOLS.map((t) => `<tr>
+    <td><span class="sw" style="--sc:${seriesById[t.series].color}"></span>${esc(t.name)}<span class="for">${esc(t.book)}</span></td>
+    <td>${esc(t.what)}</td>
+    <td><a href="${esc(t.url)}" target="_blank" rel="noopener">Open tool</a></td>
+  </tr>`).join("");
+}
+
+function wireSignup() {
+  const form = $("#signup"), status = $("#su-status");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const email = $("#su-email").value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { status.textContent = "Enter a valid email address, for example name@hospital.org."; return; }
+    if (!SETTINGS.mailerliteAction) { status.textContent = "The mailing list opens soon. Please check back shortly."; return; }
+    const data = new FormData();
+    data.append("fields[email]", email);
+    data.append("fields[name]", $("#su-name").value.trim());
+    data.append("ml-submit", "1");
+    data.append("anticsrf", "true");
+    status.textContent = "Sending…";
+    try {
+      await fetch(SETTINGS.mailerliteAction, { method: "POST", body: data, mode: "no-cors" });
+      status.textContent = "Almost done. Check your inbox and click the confirmation link.";
+      form.reset();
+    } catch (err) {
+      status.textContent = "That didn't go through. Check your connection and try again.";
+    }
+  });
+}
+
+renderHero();
+renderFilters();
+let start = "all";
+const hash = (location.hash || "").slice(1);
+if (seriesById[hash]) start = hash;
+else { try { const saved = localStorage.getItem("smp-filter"); if (saved && (saved === "all" || seriesById[saved])) start = saved; } catch (err) {} }
+renderCatalog(start);
+renderCourses();
+renderTools();
+wireSignup();
+$("#yr").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
