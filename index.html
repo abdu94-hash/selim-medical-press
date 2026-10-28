@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Selim Medical Press</title>
-<meta name="description" content="Books, courses and free companion tools in drug safety, medical device safety, wound healing and orthobiologics by Dr. Hafez Selim, MD, PhD.">
+<meta name="description" content="Books, Udemy courses and free companion tools in drug safety, medical device safety, wound healing, orthobiologics and patient care by Dr. Hafez Selim, MD, PhD.">
 <link rel="canonical" href="https://abdu94-hash.github.io/selim-medical-press/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Selim Medical Press">
-<meta property="og:description" content="Books, courses and free companion tools in drug safety, medical device safety, wound healing and orthobiologics by Dr. Hafez Selim, MD, PhD.">
+<meta property="og:description" content="Books, Udemy courses and free companion tools in drug safety, medical device safety, wound healing, orthobiologics and patient care by Dr. Hafez Selim, MD, PhD.">
 <meta property="og:url" content="https://abdu94-hash.github.io/selim-medical-press/">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231E3A5C'/%3E%3Ctext x='16' y='21' font-family='Georgia' font-size='14' fill='%23D6BA78' text-anchor='middle'%3ESM%3C/text%3E%3C/svg%3E">
@@ -163,14 +163,18 @@
   .textlink { font-family: var(--label); font-size: 13.5px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; align-self: center; }
 
   /* Courses */
-  .courses { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0; border-top: 1px solid var(--ink); }
+  .courses { display: grid; grid-template-columns: 1fr; gap: 0; border-top: 1px solid var(--ink); }
   .course { display: grid; grid-template-columns: 1fr auto; gap: 6px 20px; padding: 22px 4px; border-bottom: 1px solid var(--rule); align-items: baseline; }
-  .courses .course:nth-child(odd) { padding-right: 28px; }
+  @media (min-width: 700px) { .courses .course:nth-child(odd) { padding-right: 28px; } }
   .course h3 { font-size: 23px; }
   .course .price { font-family: var(--display); font-size: 24px; font-variant-numeric: lining-nums tabular-nums; white-space: nowrap; }
   .course p { grid-column: 1 / -1; color: var(--ink-2); font-size: 15.5px; }
   .course a { grid-column: 1 / -1; font-family: var(--label); font-size: 13.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 4px; }
-  @media (min-width: 700px) { .courses .course:nth-child(even) { padding-left: 28px; border-left: 1px solid var(--rule); } }
+  @media (min-width: 700px) { .courses { grid-template-columns: 1fr 1fr; } .courses .course:nth-child(even) { padding-left: 28px; border-left: 1px solid var(--rule); } }
+  .course-group + .course-group { margin-top: 48px; }
+  .course-group-head { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 14px; }
+  .course-group-head h3 { font-size: 27px; }
+  .course-group-head p { flex-basis: 100%; color: var(--ink-2); font-size: 16px; }
   .fineprint { font-family: var(--label); font-size: 13px; color: var(--ink-3); margin-top: 16px; letter-spacing: 0.02em; }
 
   /* Tools table */
@@ -279,13 +283,13 @@
     <div class="wrap sec">
       <div class="sec-head">
         <div>
-          <div class="label">Certificates and diplomas</div>
+          <div class="label">Udemy courses · Certificates and diplomas</div>
           <h2>Courses</h2>
-          <p>Structured online training through the MedTech Talents Institute, built on the same material as the books. Each course pairs short video lessons with quizzes and practical examples.</p>
+          <p>Online training built on the same material as the books: self-paced video courses on Udemy, and longer certificate and diploma programs through the MedTech Talents Institute.</p>
         </div>
       </div>
-      <div class="courses" id="course-list"></div>
-      <p class="fineprint">Prices are in US dollars and are set on the course platform, which shows the current price at checkout.</p>
+      <div id="course-list"></div>
+      <p class="fineprint">Prices are in US dollars and are set on each course platform, which shows the current price at checkout. Udemy runs frequent sales, so check the course page for today's price.</p>
     </div>
   </section>
 
@@ -389,6 +393,7 @@
     <span>© <span id="yr">2026</span> Selim Medical Press. The books and tools are educational references and do not replace professional judgement.</span>
     <nav aria-label="Footer">
       <a href="https://www.amazon.com/stores/author/B0H8FTNBYC" target="_blank" rel="noopener">Amazon author page</a>
+      <a href="https://www.udemy.com/user/hafez-selim/" target="_blank" rel="noopener">Udemy instructor page</a>
       <a href="https://medtechtalents.com/" target="_blank" rel="noopener">MedTech Talents Institute</a>
     </nav>
   </div>
@@ -409,17 +414,20 @@ const SETTINGS = {
 
 const SERIES = [
   { id: "pv", name: "Pharmacovigilance & Drug Safety", color: "#1D5C5E",
-    note: "Benefit–risk, causality, time to onset and signal work for drug safety physicians and scientists." },
+    note: "Case processing, coding, causality, signals, periodic reports and benefit–risk for drug safety physicians and scientists." },
   { id: "device", name: "Medical Device Safety", color: "#34406B",
     note: "Vigilance, risk management, regulatory writing and careers in the device industry." },
   { id: "wound", name: "Wound Healing & Diabetic Foot", color: "#2E5B3F",
     note: "Mechanism-first references on diabetic foot ulcer biology and adjunctive therapy." },
   { id: "ortho", name: "Orthobiologics", color: "#6E2C30",
-    note: "Bone grafts and graft substitutes, weighed on clinical evidence and device safety." }
+    note: "Bone grafts and graft substitutes, weighed on clinical evidence and device safety." },
+  { id: "patient", name: "Patient & Caregiver Guides", color: "#7A4A1E",
+    note: "Plain-language guides for patients and families, written to a sixth-grade reading level. They support, and never replace, your own doctor." }
 ];
 
 /* status: "available" or "forthcoming".
    amazon: the book's own Amazon link. Leave "" to fall back to the author page.
+   course: optional Udemy course link for the book.
    cover: optional path to a real cover image, e.g. "covers/benefit-risk.jpg" */
 const BOOKS = [
   { series: "pv", status: "available",
@@ -430,6 +438,50 @@ const BOOKS = [
     amazon: "https://www.amazon.com/dp/B0H1NLWTVL",
     other: { label: "Other stores", url: "https://books2read.com/u/mvegWz" },
     tool: "https://abdu94-hash.github.io/benefit-risk-workbench/" },
+  { series: "pv", status: "available",
+    title: "Mastering the ICSR",
+    sub: "Case Processing in Modern Pharmacovigilance",
+    blurb: "Individual case safety reports from intake to submission: validity, triage, coding, narratives, causality, follow-up and quality checks, with worked cases throughout.",
+    amazon: "https://www.amazon.com/dp/B0HM119V5Y",
+    tool: "https://abdu94-hash.github.io/icsr-workbench/",
+    course: "https://www.udemy.com/course/mastering-the-icsr-case-processing-in-pharmacovigilance/" },
+  { series: "pv", status: "available",
+    title: "From Verbatim to Signal",
+    sub: "MedDRA Coding, SMQs, and Safety Surveillance",
+    blurb: "From the reporter's own words to a defensible signal: MedDRA coding conventions, SMQ retrieval and surveillance methods, followed through one product across 22 chapters.",
+    amazon: "https://www.amazon.com/dp/B0HMNXR4XP",
+    tool: "https://abdu94-hash.github.io/verbatim-to-signal-workbench/",
+    course: "https://www.udemy.com/course/meddra-coding-smqs-and-safety-surveillance/" },
+  { series: "pv", status: "available",
+    title: "Signal Management in Pharmacovigilance",
+    sub: "From Detection and Validation to Benefit–Risk Decisions and Regulatory Action",
+    blurb: "The drug-safety counterpart to the device signal management book, from detection through validation and assessment to regulatory action.",
+    amazon: "https://www.amazon.com/dp/B0HJYPQYHL",
+    tool: "https://abdu94-hash.github.io/signal-management-tool/" },
+  { series: "pv", status: "available",
+    title: "Writing the DSUR",
+    sub: "A Practical Manual for Safety and Clinical Development Teams",
+    blurb: "How to plan, write and review a Development Safety Update Report, section by section, with mini-cases, Do/Don't boxes and tips for executive reviewers.",
+    amazon: "https://www.amazon.com/dp/B0HLS1JP78",
+    tool: "https://abdu94-hash.github.io/dsur-workbench/",
+    course: "https://www.udemy.com/course/writing-the-dsur-development-safety-update-reports/" },
+  { series: "pv", status: "available",
+    title: "Time to Onset in Drug Safety",
+    sub: "A Technical Guide to ICSR Analysis Using Mechanism of Action, Pharmacokinetics and Pharmacodynamics",
+    blurb: "Using time to onset in individual case causality, signal evaluation and survival analysis, anchored in mechanism, PK and PD.",
+    amazon: "https://www.amazon.com/dp/B0HP8N21RN" },
+  { series: "pv", status: "available",
+    title: "When Medicines Harm",
+    sub: "Fifty-One Case Histories That Shaped Pharmacovigilance",
+    blurb: "From thalidomide to Vioxx: fifty-one real drug safety cases, each written as a teaching case on what was missed, what was caught and what changed.",
+    amazon: "https://www.amazon.com/dp/B0HL5R1HHC" },
+  { series: "pv", status: "available",
+    title: "Becoming a Drug Safety Physician",
+    sub: "A Practical Guide to Entering and Advancing in Pharmacovigilance",
+    blurb: "For physicians moving into pharmacovigilance: the roles, the daily work, four published case examples and a practical plan for getting hired and moving up.",
+    amazon: "https://www.amazon.com/dp/B0HNH452TJ",
+    tool: "https://abdu94-hash.github.io/drug-safety-physician-workbench/",
+    course: "https://www.udemy.com/course/becoming-a-drug-safety-physician/" },
   { series: "pv", status: "available",
     title: "Applied Drug Safety and Adverse Drug Reactions",
     sub: "A Comprehensive Reference",
@@ -445,10 +497,6 @@ const BOOKS = [
     sub: "Practical Risk Contextualization in Pharmacovigilance: From Safety Findings to Regulatory Conclusions",
     blurb: "How to turn a safety finding into a proportionate regulatory conclusion by setting it against background rates, disease burden and the alternatives.",
     tool: "https://abdu94-hash.github.io/risk-context-workbench/" },
-  { series: "pv", status: "forthcoming",
-    title: "Signal Management in Pharmacovigilance",
-    sub: "Companion volume to Signal Management in Medical Device Vigilance",
-    blurb: "The drug-safety counterpart to the device signal management book, from detection through validation to regulatory action." },
 
   { series: "device", status: "available",
     title: "The Long Life of a Safe Device",
@@ -465,7 +513,8 @@ const BOOKS = [
     sub: "A Complete Training Handbook",
     blurb: "Core tasks, worked examples and templates for ICSRs, causality, periodic reports, ISO 14971 risk assessment and benefit–risk, with a career guide.",
     amazon: "https://www.amazon.com/dp/B0H7QBDL68",
-    tool: "https://abdu94-hash.github.io/device-safety-workbook/" },
+    tool: "https://abdu94-hash.github.io/device-safety-workbook/",
+    course: "https://www.udemy.com/course/becoming-a-medical-device-safety-specialist-hands-on/" },
   { series: "device", status: "available",
     title: "The Practice & Self-Assessment Workbook",
     sub: "Companion Workbook to Becoming a Medical Device Safety Specialist",
@@ -476,13 +525,15 @@ const BOOKS = [
     title: "Signal Management in Medical Device Vigilance",
     sub: "From Complaints and Trends to Risk File Updates and Field Safety Action",
     blurb: "28 chapters that follow a device signal from the first complaint to a closed record, with eight fictional devices whose numbers reconcile throughout.",
-    amazon: "" },
+    amazon: "https://www.amazon.com/dp/B0HK5NP2GC",
+    course: "https://www.udemy.com/course/medical-device-signal-management-complaint-to-field-action/" },
   { series: "device", status: "available",
     title: "Write It Right",
     sub: "A Practical Guide to Medical Device Regulatory Writing",
     blurb: "Clear, defensible regulatory documents, with exercises in all 16 chapters and a full answer key.",
-    amazon: "",
-    tool: "https://abdu94-hash.github.io/write-it-right/" },
+    amazon: "https://www.amazon.com/dp/B0HKTYCB1S",
+    tool: "https://abdu94-hash.github.io/write-it-right/",
+    course: "https://www.udemy.com/course/medical-device-regulatory-writing-write-it-right/" },
   { series: "device", status: "available",
     title: "The Healthcare Professional's Guide to a Career in Medical Devices",
     sub: "",
@@ -496,7 +547,7 @@ const BOOKS = [
     amazon: "https://www.amazon.com/dp/B0H92TT7VM" },
   { series: "wound", status: "available",
     title: "Molecular Targets for Diabetic Foot Ulcer Healing",
-    sub: "Mechanisms, Evidence, and Translational Therapeutics",
+    sub: "An Evidence-Graded Atlas from Mechanism to Clinical Translation",
     blurb: "Each molecular target is evaluated on the same four questions: why it is abnormal, what the evidence is, how to modulate it, and what blocks translation.",
     amazon: "https://www.amazon.com/dp/B0H71ZS5SL",
     tool: "https://abdu94-hash.github.io/dfu-target-atlas/" },
@@ -512,32 +563,91 @@ const BOOKS = [
     sub: "A Comprehensive Clinical, Scientific, and Regulatory Guide",
     blurb: "Graft-by-graft profiles on a common template, linking bone biology and clinical effectiveness to device safety and post-market surveillance.",
     extra: "Foreword by Mohamed Attawia, MD",
-    amazon: "",
-    tool: "https://abdu94-hash.github.io/bone-graft-tool/" }
+    amazon: "https://www.amazon.com/dp/B0HG3YGNXZ",
+    tool: "https://abdu94-hash.github.io/bone-graft-tool/" },
+
+  { series: "patient", status: "available",
+    title: "Every Turn Matters",
+    sub: "How to Stop Bedsores Before They Start — and What to Do the Day You Find One",
+    blurb: "A calm, step-by-step guide for family caregivers built on five actions: look, lift, move, protect and report, with a traffic-light guide to when to call the doctor.",
+    extra: "With Amor Khachemoune, MD, FAAD, FACMS",
+    amazon: "https://www.amazon.com/dp/B0HMNXJL31" },
+  { series: "patient", status: "available",
+    title: "GLP-1 Medicines: Side Effects and When to Get Help",
+    sub: "What's Normal, What's Not, and What to Do Next",
+    blurb: "For people taking GLP-1 medicines for weight or type 2 diabetes, and the people who care for them: which side effects are expected, which are not, and when to get help.",
+    amazon: "https://www.amazon.com/dp/B0HNHBCQ1K" },
+  { series: "patient", status: "available",
+    title: "Understanding Berberine",
+    sub: "A Guide for Type 2 Diabetes",
+    blurb: "What the evidence does and does not show about berberine in type 2 diabetes, how it interacts with other medicines, and a workbook for talking it through with your doctor.",
+    amazon: "https://www.amazon.com/dp/B0HLX5H5PW" }
 ];
 
+/* platform: "Udemy" or "MTTI". price is shown for MTTI courses only;
+   Udemy sets and changes its own prices, so those show "On Udemy". */
 const COURSES = [
-  { name: "Applied Drug Safety Certificate", price: "$99",
+  { platform: "Udemy", name: "Mastering the ICSR: Case Processing in Pharmacovigilance",
+    text: "The full case-processing workflow from the book, with workbench demonstrations in every section.",
+    url: "https://www.udemy.com/course/mastering-the-icsr-case-processing-in-pharmacovigilance/" },
+  { platform: "Udemy", name: "MedDRA Coding, SMQs and Safety Surveillance",
+    text: "The course edition of From Verbatim to Signal: coding practice, SMQ retrieval and surveillance calculations.",
+    url: "https://www.udemy.com/course/meddra-coding-smqs-and-safety-surveillance/" },
+  { platform: "Udemy", name: "Writing the DSUR: Development Safety Update Reports",
+    text: "Section-by-section DSUR writing and review for safety and clinical development teams.",
+    url: "https://www.udemy.com/course/writing-the-dsur-development-safety-update-reports/" },
+  { platform: "Udemy", name: "Becoming a Drug Safety Physician",
+    text: "A compact course for physicians moving into pharmacovigilance, built on the book and its free workbench.",
+    url: "https://www.udemy.com/course/becoming-a-drug-safety-physician/" },
+  { platform: "Udemy", name: "Becoming a Medical Device Safety Specialist (Hands-On)",
+    text: "The core device safety tasks from the training handbook, worked step by step.",
+    url: "https://www.udemy.com/course/becoming-a-medical-device-safety-specialist-hands-on/" },
+  { platform: "Udemy", name: "Medical Device Signal Management: Complaint to Field Action",
+    text: "Detecting, validating and acting on device signals, condensed from Signal Management in Medical Device Vigilance.",
+    url: "https://www.udemy.com/course/medical-device-signal-management-complaint-to-field-action/" },
+  { platform: "Udemy", name: "Medical Device Regulatory Writing: Write It Right",
+    text: "Clear, defensible regulatory documents, with the book's exercises and rewrite drills.",
+    url: "https://www.udemy.com/course/medical-device-regulatory-writing-write-it-right/" },
+  { platform: "Udemy", name: "Medical Device Regulatory Writing: EU MDR & FDA",
+    text: "Regulatory writing for EU MDR technical documentation and FDA submissions.",
+    url: "https://www.udemy.com/course/medical-device-regulatory-writing-eu-mdr-fda/" },
+
+  { platform: "MTTI", name: "Applied Drug Safety Certificate", price: "$99",
     text: "100 lessons across 18 chapters. The course behind Applied Drug Safety and Adverse Drug Reactions.",
     url: "https://courses.medtechtalents.com/products/courses/Applied-Drug-Safety-Certificate" },
-  { name: "Applied Pharmacovigilance Diploma", price: "$799",
+  { platform: "MTTI", name: "Applied Pharmacovigilance Diploma", price: "$799",
     text: "In-depth pharmacovigilance training for clinicians moving into drug safety roles.",
     url: "https://courses.medtechtalents.com/courses/Applied%20Pharmacovigilance%20Diploma" },
-  { name: "Applied Medical Device Safety Certificate", price: "$499",
+  { platform: "MTTI", name: "Applied Medical Device Safety Certificate", price: "$499",
     text: "Complaint handling, vigilance reporting and risk management across the device lifecycle.",
     url: "https://courses.medtechtalents.com/courses/Applied%20Medical%20Device%20Safety%20Certificate" },
-  { name: "Medical Device Safety Specialist Diploma", price: "$799",
+  { platform: "MTTI", name: "Medical Device Safety Specialist Diploma", price: "$799",
     text: "The full training path that accompanies Becoming a Medical Device Safety Specialist.",
     url: "https://courses.medtechtalents.com/courses/Medical%20Device%20Safety%20Specialist%20Diploma" },
-  { name: "Biostatistics Made Easy", price: "$299",
+  { platform: "MTTI", name: "Biostatistics Made Easy", price: "$299",
     text: "The statistics you need to read trials and safety data, taught without heavy math.",
     url: "https://courses.medtechtalents.com/courses/Biostatistics%20Made%20Easy" },
-  { name: "All-access membership", price: "$9.99/mo",
+  { platform: "MTTI", name: "All-access membership", price: "$9.99/mo",
     text: "Every MTTI prep course for the pharmaceutical industry, with a 7-day free trial.",
     url: "https://courses.medtechtalents.com/bundles/prep-courses-for-pharma-industry" }
 ];
 
 const TOOLS = [
+  { name: "ICSR Workbench", series: "pv", book: "Mastering the ICSR",
+    what: "Practice cases and tools for validity, triage, coding, narratives and causality.",
+    url: "https://abdu94-hash.github.io/icsr-workbench/" },
+  { name: "Verbatim to Signal Workbench", series: "pv", book: "From Verbatim to Signal",
+    what: "A MedDRA coding trainer, SMQ retrieval lab, surveillance calculators and fillable worksheets.",
+    url: "https://abdu94-hash.github.io/verbatim-to-signal-workbench/" },
+  { name: "Signal Management Toolkit", series: "pv", book: "Signal Management in Pharmacovigilance",
+    what: "Toolkit and companion tool for detecting, validating and assessing drug safety signals.",
+    url: "https://abdu94-hash.github.io/signal-management-tool/" },
+  { name: "DSUR Workbench", series: "pv", book: "Writing the DSUR",
+    what: "An interactive field guide, a full worked mock DSUR, and Word and Excel templates.",
+    url: "https://abdu94-hash.github.io/dsur-workbench/" },
+  { name: "Drug Safety Physician Workbench", series: "pv", book: "Becoming a Drug Safety Physician",
+    what: "Eight staged practice cases, career planners and an ATS-friendly resume builder.",
+    url: "https://abdu94-hash.github.io/drug-safety-physician-workbench/" },
   { name: "Benefit–Risk Workbench", series: "pv", book: "Practical Benefit–Risk Assessment in Pharmacovigilance",
     what: "Seven interactive modules, including an NNT/NNH calculator, that follow the book's methods chapter by chapter.",
     url: "https://abdu94-hash.github.io/benefit-risk-workbench/" },
@@ -588,7 +698,8 @@ function bookHTML(b) {
     ? `<a class="btn solid" href="${esc(buyUrl)}" target="_blank" rel="noopener">${buyLabel}</a>` +
       (b.other ? `<a class="textlink" href="${esc(b.other.url)}" target="_blank" rel="noopener">${esc(b.other.label)}</a>` : "")
     : `<a class="btn" href="#updates">Notify me</a>`;
-  const tool = b.tool ? `<a class="textlink" href="${esc(b.tool)}" target="_blank" rel="noopener">Free tool</a>` : "";
+  const tool = (b.tool ? `<a class="textlink" href="${esc(b.tool)}" target="_blank" rel="noopener">Free tool</a>` : "") +
+    (b.course ? `<a class="textlink" href="${esc(b.course)}" target="_blank" rel="noopener">Udemy course</a>` : "");
   return `<article class="book">
     ${coverHTML(b)}
     <div class="book-meta"><span class="pill ${live ? "live" : "soon"}">${live ? "Available" : "Forthcoming"}</span></div>
@@ -641,10 +752,17 @@ function renderHero() {
 }
 
 function renderCourses() {
-  $("#course-list").innerHTML = COURSES.map((c) => `<div class="course">
-    <h3>${esc(c.name)}</h3><span class="price">${esc(c.price)}</span>
-    <p>${esc(c.text)}</p>
-    <a href="${esc(c.url)}" target="_blank" rel="noopener">View course</a>
+  const groups = [
+    { id: "Udemy", title: "On Udemy", note: "Self-paced video courses built from the books. Lifetime access, a certificate of completion, and Udemy's own pricing and refund policy." },
+    { id: "MTTI", title: "MedTech Talents Institute", note: "Certificates and diplomas with quizzes, live sessions and career support." }
+  ];
+  $("#course-list").innerHTML = groups.map((g) => `<div class="course-group">
+    <div class="course-group-head"><h3>${esc(g.title)}</h3><span class="label">${COURSES.filter((c) => c.platform === g.id).length} courses</span><p>${esc(g.note)}</p></div>
+    <div class="courses">${COURSES.filter((c) => c.platform === g.id).map((c) => `<div class="course">
+      <h3>${esc(c.name)}</h3>${c.price ? `<span class="price">${esc(c.price)}</span>` : ""}
+      <p>${esc(c.text)}</p>
+      <a href="${esc(c.url)}" target="_blank" rel="noopener">${c.platform === "Udemy" ? "View on Udemy" : "View course"}</a>
+    </div>`).join("")}</div>
   </div>`).join("");
 }
 
