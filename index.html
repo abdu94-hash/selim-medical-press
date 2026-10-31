@@ -469,7 +469,8 @@ const BOOKS = [
     title: "Time to Onset in Drug Safety",
     sub: "A Technical Guide to ICSR Analysis Using Mechanism of Action, Pharmacokinetics and Pharmacodynamics",
     blurb: "Using time to onset in individual case causality, signal evaluation and survival analysis, anchored in mechanism, PK and PD.",
-    amazon: "https://www.amazon.com/dp/B0HP8N21RN" },
+    amazon: "https://www.amazon.com/dp/B0HP8N21RN",
+    tool: "https://abdu94-hash.github.io/tto-companion-tools/" },
   { series: "pv", status: "available",
     title: "When Medicines Harm",
     sub: "Fifty-One Case Histories That Shaped Pharmacovigilance",
@@ -497,6 +498,11 @@ const BOOKS = [
     sub: "Practical Risk Contextualization in Pharmacovigilance: From Safety Findings to Regulatory Conclusions",
     blurb: "How to turn a safety finding into a proportionate regulatory conclusion by setting it against background rates, disease burden and the alternatives.",
     tool: "https://abdu94-hash.github.io/risk-context-workbench/" },
+  { series: "pv", status: "forthcoming",
+    title: "Drug–Drug Interactions in Drug Safety and Pharmacovigilance",
+    sub: "",
+    blurb: "How interactions are recognised, quantified and assessed in drug safety work, with worked calculations you can rerun in the free companion calculators.",
+    tool: "https://abdu94-hash.github.io/ddi-pv-toolkit/" },
 
   { series: "device", status: "available",
     title: "The Long Life of a Safe Device",
@@ -611,6 +617,8 @@ const COURSES = [
   { platform: "Udemy", name: "Medical Device Regulatory Writing: EU MDR & FDA",
     text: "Regulatory writing for EU MDR technical documentation and FDA submissions.",
     url: "https://www.udemy.com/course/medical-device-regulatory-writing-eu-mdr-fda/" },
+  { platform: "Udemy", name: "Drug–Drug Interactions in Pharmacovigilance", soon: true,
+    text: "Recognising, quantifying and assessing drug–drug interactions in safety work, with the companion calculators." },
 
   { platform: "MTTI", name: "Applied Drug Safety Certificate", price: "$99",
     text: "100 lessons across 18 chapters. The course behind Applied Drug Safety and Adverse Drug Reactions.",
@@ -645,6 +653,12 @@ const TOOLS = [
   { name: "DSUR Workbench", series: "pv", book: "Writing the DSUR",
     what: "An interactive field guide, a full worked mock DSUR, and Word and Excel templates.",
     url: "https://abdu94-hash.github.io/dsur-workbench/" },
+  { name: "TTO Companion Calculator", series: "pv", book: "Time to Onset in Drug Safety",
+    what: "Interval, sequence and time-to-onset arithmetic from the book, with an Excel workbook.",
+    url: "https://abdu94-hash.github.io/tto-companion-tools/" },
+  { name: "DDI Teaching Calculators", series: "pv", book: "Drug–Drug Interactions in Drug Safety and Pharmacovigilance",
+    what: "The book's worked interaction calculations as interactive teaching tools, with worksheets and teaching datasets.",
+    url: "https://abdu94-hash.github.io/ddi-pv-toolkit/" },
   { name: "Drug Safety Physician Workbench", series: "pv", book: "Becoming a Drug Safety Physician",
     what: "Eight staged practice cases, career planners and an ATS-friendly resume builder.",
     url: "https://abdu94-hash.github.io/drug-safety-physician-workbench/" },
@@ -761,7 +775,7 @@ function renderCourses() {
     <div class="courses">${COURSES.filter((c) => c.platform === g.id).map((c) => `<div class="course">
       <h3>${esc(c.name)}</h3>${c.price ? `<span class="price">${esc(c.price)}</span>` : ""}
       <p>${esc(c.text)}</p>
-      <a href="${esc(c.url)}" target="_blank" rel="noopener">${c.platform === "Udemy" ? "View on Udemy" : "View course"}</a>
+      ${c.soon ? `<span class="price">Coming soon</span>` : `<a href="${esc(c.url)}" target="_blank" rel="noopener">${c.platform === "Udemy" ? "View on Udemy" : "View course"}</a>`}
     </div>`).join("")}</div>
   </div>`).join("");
 }
