@@ -775,7 +775,7 @@ function renderCourses() {
     <div class="courses">${COURSES.filter((c) => c.platform === g.id).map((c) => `<div class="course">
       <h3>${esc(c.name)}</h3>${c.price ? `<span class="price">${esc(c.price)}</span>` : ""}
       <p>${esc(c.text)}</p>
-      ${c.soon ? `<span class="price">Coming soon</span>` : `<a href="${esc(c.url)}" target="_blank" rel="noopener">${c.platform === "Udemy" ? "View on Udemy" : "View course"}</a>`}
+      ${c.soon ? `<span class="price">Coming soon</span>` : c.platform === "Udemy" ? `<a href="${esc(c.url)}" target="_blank" rel="noopener">View on Udemy</a>` : ""}
     </div>`).join("")}</div>
   </div>`).join("");
 }
